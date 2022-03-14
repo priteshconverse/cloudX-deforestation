@@ -1,2 +1,0 @@
-# cloudX-deforestation
-cloudX deforestation
