@@ -1,0 +1,26 @@
+<div class="row predict-simulation-parent">
+    <div class="col-12 predict-simulation-section">
+        <div class="row panel-head">
+            <span class="panel-text">Panel</span>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="row tabs-parent">
+                    <button (click)="actualTime()">Actual Time</button>
+                    <button (click)="simulation()">Simulation</button>
+                </div>
+                <div class="row data-section">
+                    <div *ngIf="actualTimeFlag">
+                        <app-actual-time-tab></app-actual-time-tab>
+                    </div>
+                    <div *ngIf="simulationFlag">
+                        <app-simulation-tab></app-simulation-tab>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="../../../assets/map1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

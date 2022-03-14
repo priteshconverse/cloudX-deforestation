@@ -1,0 +1,21 @@
+.predict-simulation-parent {
+    padding: 50px;
+}
+
+.predict-simulation-section {
+    width: 80%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.panel-head {
+    width: calc(100% - 40px);
+    background-color: #a9b09c;
+    padding: 20px;
+}
+
+.panel-text {
+    color: #fff;
+    font-size: 25px;
+}
