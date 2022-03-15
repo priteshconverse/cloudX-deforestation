@@ -1,0 +1,30 @@
+[
+  {
+    "region": "Brazil",
+    "year": "2019",
+    "temperature": "25 Degree Celcius",
+    "humidity": "35%",
+    "precipitation": "450 PPM"
+  },
+  {
+    "region": "Brazil",
+    "year": "2020",
+    "temperature": "29 Degree Celcius",
+    "humidity": "36.7%",
+    "precipitation": "470 PPM"
+  },
+  {
+    "region": "Brazil",
+    "year": "2021",
+    "temperature": "31 Degree Celcius",
+    "humidity": "39%",
+    "precipitation": "512 PPM"
+  },
+  {
+    "region": "Brazil",
+    "year": "2022",
+    "temperature": "30 Degree Celcius",
+    "humidity": "37%",
+    "precipitation": "5022 PPM"
+  }
+]

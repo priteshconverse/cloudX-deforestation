@@ -1,0 +1,29 @@
+.panel-head {
+  width: calc(100% - 40px);
+  background-color: #a9b09c;
+  padding: 20px;
+}
+
+.panel-body {
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.panel-center {
+  width: 100%;
+  display: inline-block;  
+  padding: 50px 0;
+  margin: auto;
+}
+
+.panel-center
+  img {
+    margin: auto;
+    display: block;
+  }
+
+.panel-text {
+  color: #fff;
+  font-size: 25px;
+}

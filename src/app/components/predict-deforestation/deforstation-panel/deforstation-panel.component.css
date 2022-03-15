@@ -4,9 +4,14 @@
 
 .predict-simulation-section {
     width: 80%;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     border-radius: 5px;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+.predict-simulation-result {
+    margin-top: 40px;
 }
 
 .panel-head {
@@ -15,7 +20,117 @@
     padding: 20px;
 }
 
+.panel-body {
+    width: calc(100% - 40px);
+    padding: 20px;
+    background-color: #fff;
+}
+
+.panel-center {
+    width: 100%;
+    display: inline-block;  
+    margin: 50px 0;
+}
+
 .panel-text {
     color: #fff;
     font-size: 25px;
 }
+
+.tabs-parent {
+    overflow: hidden;
+}
+
+.tablinks {
+    color: #C0C0C0;
+    font-weight: 600;
+    border-radius: 5px 5px 0 0;
+}
+
+.tabs-parent
+    .active-tab {
+        border-color: lightgray;
+        border-style: solid;
+        border-width: 2px 2px 0 2px;
+        color: #696969;
+    }
+
+.tabs-parent button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tabs-parent button:hover {
+    background-color: #ddd;
+}
+  
+.tabs-parent button:active {
+    background-color: #ccc;
+    border: 1px solid gray;
+}
+
+.tab-data-parent {
+    border: 2px solid lightgray;
+}
+  
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.panel-half {
+    width: calc(50% - 100px);
+    max-height: 495px;
+    padding: 0 50px;
+}
+
+.panel-left {
+    float: left;
+}
+
+.panel-right {
+    overflow: hidden;
+}
+
+
+.dropdown-container {
+    padding: 5px 20px 5px 0;    
+}
+
+.year-label {
+    color: #C0C0C0;
+    font-size: 17px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.year-dropdown {
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #a9b09c;
+}
+
+.option-list {
+    color: #696969;
+    background-color: #fff;
+}
+
+.option-list:hover {
+    background-color: #ebece7;
+}
+
+.map-parent {
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
