@@ -9,6 +9,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SimulationTabComponent } from './components/predict-deforestation/deforstation-panel/simulation-tab/simulation-tab.component';
 import { ActualTimeTabComponent } from './components/predict-deforestation/deforstation-panel/actual-time-tab/actual-time-tab.component';
 import { PredictResultComponent } from './components/predict-deforestation/deforstation-panel/predict-result/predict-result.component'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { PredictResultComponent } from './components/predict-deforestation/defor
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

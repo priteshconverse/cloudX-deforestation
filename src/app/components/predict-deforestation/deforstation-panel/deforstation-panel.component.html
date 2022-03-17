@@ -1,47 +1,49 @@
 <div class="wrapper">
     <div class="row predict-simulation-parent">
-        <div class="col-12 predict-simulation-section">
+        <div class="col-md-12 predict-simulation-section">
             <div class="row panel-head">
                 <span class="panel-text">Panel</span>
             </div>
             <div class="row panel-body">
-                <div class="panel-center">
-                    <div class="col-md-6 panel-half panel-left">
-                        <div class="row tabs-parent">
-                            <button class="tablinks actual-time-tab" [ngClass]="{'active-tab' : actualTimeFlag}" (click)="actualTime()">Actual Time</button>
-                            <button class="tablinks simulation-tab" [ngClass]="{'active-tab' : simulationFlag}" (click)="simulation()">Simulation</button>
+                <div class="col-md-6 panel-half panel-left">
+                    <div class="row tabs-parent">
+                        <button class="tablinks actual-time-tab" [ngClass]="{'active-tab' : actualTimeFlag}" (click)="actualTime()">Actual Time</button>
+                        <button class="tablinks simulation-tab" [ngClass]="{'active-tab' : simulationFlag}" (click)="simulation()">Simulation</button>
+                    </div>
+                    <div class="row tab-data-parent">
+                        <div id="actual-time-data" *ngIf="actualTimeFlag">
+                            <app-actual-time-tab></app-actual-time-tab>
                         </div>
-                        <div class="row tab-data-parent">
-                            <div id="actual-time-data" *ngIf="actualTimeFlag">
-                                <app-actual-time-tab></app-actual-time-tab>
-                            </div>
-                            <div id="simulation-data" *ngIf="simulationFlag">
-                                <app-simulation-tab></app-simulation-tab>
-                            </div>
+                        <div id="simulation-data" *ngIf="simulationFlag">
+                            <app-simulation-tab></app-simulation-tab>
                         </div>
                     </div>
-                    <div class="col-md-6 panel-half panel-right">
-                        <div class="row dropdown-container">
-                            <label for="dropdown" class="year-label">Year:</label>
-                            <select name="types" id="#" class="year-dropdown">
+                </div>
+                <div class="col-md-6 panel-half panel-right">
+                    <div class="row dropdown-container">
+                        <div class="col-md-1 year-label">
+                            <!-- <label for="dropdown" class="year-label">Year:</label> -->
+                            <span class="year-label">Year:</span>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="types" id="#" class="year-dropdown" [(ngModel)]="selectedYearData" (change)="selected()">
                                 <option 
                                     class="option-list"
                                     selected="selected" 
                                     value="one"
-                                    *ngFor="let data of climateData">
+                                    *ngFor="let data of climateData"
+                                    [ngValue]="data"
+                                >
                                     {{ data.year }}
                                 </option>
                             </select>
                         </div>
-                        <div class="row map-parent">
-                            <img src="../../../assets/map1.jpg" alt="">
-                        </div>
+                    </div>
+                    <div class="row map-parent">
+                        <img src="../../../assets/image/map1.jpg" alt="">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 predict-simulation-section predict-simulation-result">
-            <app-predict-result></app-predict-result>
         </div>
     </div>
 </div>

@@ -1,21 +1,34 @@
 import { NgModule ,Component, OnInit } from '@angular/core';
-import data from '../../../../app/data-set/yearsData.json';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeforestationDataService } from '../../../services/deforestation-data.service'
+import data from '../../../../../src/assets/data-set/yearsData.json';
+
 @Component({
   selector: 'app-deforstation-panel',
   templateUrl: './deforstation-panel.component.html',
   styleUrls: ['./deforstation-panel.component.css']
 })
 export class DeforstationPanelComponent implements OnInit {
-  actualTimeFlag: boolean = false;
-  simulationFlag: boolean = true;
+  actualTimeFlag: boolean = true;
+  simulationFlag: boolean = false;
   climateData =  data;
-  selectedLevel: any;
+  selectedYearData: any;
+  localDate: string = new Date().toLocaleDateString();
+  currentYear: any;
 
-  constructor() { }
+  constructor(
+    private deforestationDataService : DeforestationDataService
+  ) { }
 
   ngOnInit(): void {
-    console.log("JSON", data)
-    console.log("JSON data", this.climateData)
+    // console.log("JSON", data)
+    // console.log("JSON data", this.climateData)
+    this.currentYear = this.localDate.substring(this.localDate.length - 4);
+    console.log("CURRENT YEAR==", this.currentYear)
+    this.selectedYearData = {
+      year: this.currentYear-1
+    } 
+    console.log("Selected tea datta ++++", this.selectedYearData  )
   }
 
   actualTime() {
@@ -31,7 +44,13 @@ export class DeforstationPanelComponent implements OnInit {
   }
 
   selected() {
-    console.log('====', this.selectedLevel)
+    console.log('====', this.selectedYearData);
+    this.deforestationDataService.setYear(this.selectedYearData)
+    if (this.selectedYearData.year === this.currentYear) {
+      this.simulation();
+    } else {
+      this.actualTime();
+    }
   }
 
 }

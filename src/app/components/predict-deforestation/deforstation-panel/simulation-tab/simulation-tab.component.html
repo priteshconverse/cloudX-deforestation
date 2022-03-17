@@ -1,21 +1,48 @@
 <div class="main-body">
-  <div>
-    <label class="label" for="region">Region:</label>
-    <input class="input-field" type="text">
-  </div>
-  <div>
-    <label class="label" for="temperature">Temperature:</label>
-    <input class="input-field" type="text">
-  </div>
-  <div>
-    <label class="label" for="humidity">Humidity:</label>
-    <input class="input-field" type="text">
-  </div>
-  <div>
-    <label class="label" for="precipitation">Precipitation:</label>
-    <input class="input-field" type="text">
-  </div>
-  <div id="button-container">
-    <span type="submit" class="submit-data">SUBMIT</span>
-  </div>
+  <form [formGroup]="deforestationPrediction" (ngSubmit)="onSubmit()">
+    <div>
+      <label class="label" for="region">Region:</label>
+      <input class="input-field" type="text" formControlName="region">
+    </div>
+    <div>
+      <label class="label" for="surfacePressure">Surface Pressure:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="earthSkinTemperature">Earth Skin Temperature:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="temperatureAtTwoMeters">Temperature at 2 Meters:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="specificHumidityAtTwoMeters">Specific Humidity at 2 Meters:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="relativeHumidityAtTwoMeters">Relative Humidity at 2 Meters:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="surfaceSoilWeakness">Surface Soil Wetness:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="profileSoilMoisture">Profile Soil Moisture:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="temperatureAtTwoMetersRange">Temperature at 2 Meters Range:</label>
+      <input class="input-field" type="text">
+    </div>
+    <div>
+      <label class="label" for="precipitationCorrected">Precipitation Corrected:</label>
+      <input class="input-field" type="text">
+    </div>
+  
+    <div id="button-container">
+      <span type="submit" class="submit-data" (click)="onSubmit()">SUBMIT</span>
+    </div>
+  </form>
 </div>

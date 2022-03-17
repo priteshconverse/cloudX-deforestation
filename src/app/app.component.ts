@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'deforestation';
-  loginFlag: boolean = false;
+  loginFlag: boolean = true;
 
   login() {
     this.loginFlag = true;
