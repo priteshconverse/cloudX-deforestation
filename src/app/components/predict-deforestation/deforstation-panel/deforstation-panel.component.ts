@@ -21,8 +21,6 @@ export class DeforstationPanelComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // console.log("JSON", data)
-    // console.log("JSON data", this.climateData)
     this.currentYear = this.localDate.substring(this.localDate.length - 4);
     console.log("CURRENT YEAR==", this.currentYear)
     this.selectedYearData = {
