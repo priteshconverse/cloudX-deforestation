@@ -35,8 +35,6 @@ export class DeforstationPanelComponent implements OnInit {
     // console.log("CURRENT YEAR==", this.currentYear)
     // this.yearDropDownData = [...new Set(this.climateData.map(item => item.year))];
     // console.log("uniques data ===>>>>>>>>>>>>>>>>", this.yearDropDownData)
-
-
   }
 
   actualTime() {
