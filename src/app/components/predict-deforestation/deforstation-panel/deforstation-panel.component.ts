@@ -27,14 +27,8 @@ export class DeforstationPanelComponent implements OnInit {
   ngOnInit() {
     var date = new Date();
     this.localDate = this.datePipe.transform(date,"yyyy-MM-dd")
-    console.log("local date", this.localDate)
     this.currentYear = this.localDate.substring(0,4);
     this.currentMonth = this.localDate.substring(5,7);
-
-    // console.log("month", this.currentMonth)
-    // console.log("CURRENT YEAR==", this.currentYear)
-    // this.yearDropDownData = [...new Set(this.climateData.map(item => item.year))];
-    // console.log("uniques data ===>>>>>>>>>>>>>>>>", this.yearDropDownData)
   }
 
   actualTime() {
@@ -48,7 +42,6 @@ export class DeforstationPanelComponent implements OnInit {
   }
 
   selected() {
-    console.log(' selected year====--', this.selectedYear);
     this.deforestationDataService.setYear(this.selectedYear, this.localDate)
     if (this.selectedYear > this.currentYear) {
       this.simulation();
