@@ -9,20 +9,14 @@ import { DeforestationDataService } from '../../../../services/deforestation-dat
 export class ActualTimeTabComponent implements OnInit {
   dataSub:any;
   climateData: any;
-  // localDate: string = new Date().toLocaleDateString();
-  // currentYear: any;
 
   constructor(
-    private deforestationDataService: DeforestationDataService,
-    // public datePipe : DatePipe
+    private deforestationDataService: DeforestationDataService
   ) { }
 
   ngOnInit() {
     this.dataSub = this.deforestationDataService.singleYearDataObs.subscribe(data => {
       this.climateData = data;
-      // console.log("climate data ===>>>>>", this.climateData)
-      // this.currentYear = this.localDate.substring(this.localDate.length - 4);
-      // console.log("CURRENT YEAR", this.currentYear)
     })
   }
 
