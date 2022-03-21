@@ -1,7 +1,8 @@
 import { NgModule ,Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeforestationDataService } from '../../../services/deforestation-data.service'
-import data from '../../../../../src/assets/data-set/yearsData.json';
+import data from '../../../../../src/assets/data-set/climateData.json';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-deforstation-panel',
@@ -12,28 +13,33 @@ export class DeforstationPanelComponent implements OnInit {
   actualTimeFlag: boolean = true;
   simulationFlag: boolean = false;
   climateData =  data;
-  selectedYearData: any;
-  localDate: string = new Date().toLocaleDateString();
+  selectedYear: any;
+  localDate: any;
   currentYear: any;
+  currentMonth: any;
+  yearDropDownData = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"];
 
   constructor(
-    private deforestationDataService : DeforestationDataService
+    private deforestationDataService : DeforestationDataService,
+    private datePipe: DatePipe
   ) { }
 
-  ngOnInit(): void {
-    this.currentYear = this.localDate.substring(this.localDate.length - 4);
-    console.log("CURRENT YEAR==", this.currentYear)
-    this.selectedYearData = {
-      year: this.currentYear-1
-    } 
-    console.log("Selected tea datta ++++", this.selectedYearData  )
+  ngOnInit() {
+    var date = new Date();
+    this.localDate = this.datePipe.transform(date,"yyyy-MM-dd")
+    console.log("local date", this.localDate)
+    this.currentYear = this.localDate.substring(0,4);
+    this.currentMonth = this.localDate.substring(5,7);
+
+    // console.log("month", this.currentMonth)
+    // console.log("CURRENT YEAR==", this.currentYear)
+    // this.yearDropDownData = [...new Set(this.climateData.map(item => item.year))];
+    // console.log("uniques data ===>>>>>>>>>>>>>>>>", this.yearDropDownData)
   }
 
   actualTime() {
     this.actualTimeFlag = true;
     this.simulationFlag = false;
-    // const activeClass = document.querySelector(".tablinks");
-    // activeClass?.className += ' active'
   }
   
   simulation() {
@@ -42,13 +48,14 @@ export class DeforstationPanelComponent implements OnInit {
   }
 
   selected() {
-    console.log('====', this.selectedYearData);
-    this.deforestationDataService.setYear(this.selectedYearData)
-    if (this.selectedYearData.year === this.currentYear) {
+    console.log(' selected year====--', this.selectedYear);
+    this.deforestationDataService.setYear(this.selectedYear, this.localDate)
+    if (this.selectedYear > this.currentYear) {
       this.simulation();
     } else {
       this.actualTime();
     }
+    
   }
 
 }

@@ -10,6 +10,7 @@ import { SimulationTabComponent } from './components/predict-deforestation/defor
 import { ActualTimeTabComponent } from './components/predict-deforestation/deforstation-panel/actual-time-tab/actual-time-tab.component';
 import { PredictResultComponent } from './components/predict-deforestation/deforstation-panel/predict-result/predict-result.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
