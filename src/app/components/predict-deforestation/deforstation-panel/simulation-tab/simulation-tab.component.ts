@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import data from '../../../../../assets/data-set/yearsData.json';
+import data from '../../../../../assets/data-set/climateData.json';
 
 @Component({
   selector: 'app-simulation-tab',

@@ -20,7 +20,7 @@ export class ActualTimeTabComponent implements OnInit {
   ngOnInit() {
     this.dataSub = this.deforestationDataService.singleYearDataObs.subscribe(data => {
       this.climateData = data;
-      console.log("climate data ===>>>>>", this.climateData)
+      // console.log("climate data ===>>>>>", this.climateData)
       // this.currentYear = this.localDate.substring(this.localDate.length - 4);
       // console.log("CURRENT YEAR", this.currentYear)
     })
